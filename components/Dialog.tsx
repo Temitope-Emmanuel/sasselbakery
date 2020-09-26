@@ -4,12 +4,10 @@ import Dialog from '@material-ui/core/Dialog';
 import {makeStyles,createStyles,Theme} from "@material-ui/core/styles"
 import {DialogActions,IconButton,Box,Typography,Collapse} from '@material-ui/core';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import {
-  MainBg,MainBg2,chocobar,
+import {chocobar,
   sprinkle,strawberry,cupcake,
   emojiCake,chocoCake} from "../assets/images"
 import MoreIcon from '@material-ui/icons/MoreVert';
