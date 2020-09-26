@@ -3,9 +3,13 @@ import Link from 'next/link'
 import Navbar from "../components/Navbar"
 import {makeStyles,createStyles,Theme} from "@material-ui/core/styles"
 import {Box,Button,Typography} from "@material-ui/core"
-import {MainBg,MainBg2} from "../assets/images"
+import {
+  MainBg,chocoCake,
+  chocobar,chocolateCake,
+  cupcake,emojiCake,strawberry,
+  MainBg2} from "../assets/images"
 import {pink} from "@material-ui/core/colors"
-// import Layout from '../components/Layout'
+import Dialog from "../components/Dialog"
 
 const useStyles = makeStyles((theme:Theme) => createStyles({
   root:{
@@ -31,9 +35,16 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
     "& h5,p":{
       color:"whitesmoke"
     },
+    "& p":{
+      display:"none",
+      [theme.breakpoints.up("sm")]:{
+        display:"block"
+      }
+    },
     "& h5":{
       fontFamily: "Pacifico, cursive",
       fontSize:"2.5em",
+      WebkitTextStroke:`.2px ${pink["A200"]}`,      
     },
     [theme.breakpoints.up("md")]:{
       height:"80vh"
@@ -46,7 +57,6 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
     },
       "& > div:last-child":{
         position:"absolute",
-        display:"none",
         marginLeft:"2.5%",
         paddingLeft:".5em",
         width:"80%",
@@ -105,6 +115,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
     zIndex:5,
     border:`1px solid ${pink["A700"]}`,
     transform:"translateY(-60%)",
+    maxWidth:"527px",
     "& > button":{
       marginTop:"1em",
       borderRadius:"5em",
@@ -127,7 +138,6 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
         fontFamily: "Pacifico, cursive",
         fontSize:"2em",
       },
-      maxWidth:"50em",
       width:"50vw",
       height:"25em",
       "& span":{
@@ -142,7 +152,7 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
   },
   mediaSection:{
     "& > div":{
-      margin:"12em 0"
+      margin:"12em 1em"
     },
     "& > div:first-child":{
       marginTop:"0"
@@ -162,7 +172,6 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
     borderRadius:".5em",
     display:"flex",
     alignItems:"center",
-    margin:"0 2em",
     flexDirection:"column-reverse",
     maxHeight:"22em",
     maxWidth:"75em",
@@ -171,8 +180,6 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
       borderRadius:"5em",
       border:`1px solid ${pink[500]}`,
       padding:".5em 2.4em",
-      // fontFamily: "Pacifico, cursive",
-      // textTransform:"capitalize"
     },
     "& span":{
       fontSize:"1em",
@@ -231,7 +238,8 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
         display:"block",
         width:"45%",
         height:"60em",
-        marginRight:"1%"
+        marginRight:"1%",
+        maxHeight:"650px"
       }
     },
     [theme.breakpoints.up("sm")]:{
@@ -255,15 +263,21 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
       paddingBottom:0,
       alignItems:"flex-start"
     },
+    [theme.breakpoints.up("md")]:{
+      height:"500px",
+    },
     "& > div:first-child":{
       width:"100%",
-      height:"40vh",
+      height:"30vh",
       backgroundPosition:"top",
       backgroundSize:"cover",
       backgroundRepeat:"no-repeat",
       [theme.breakpoints.up("sm")]:{
         height:"40em",
         flex:1
+      },
+      [theme.breakpoints.up("md")]:{
+        height:"100%"
       }
     },
     "& > div:nth-child(2)":{
@@ -294,6 +308,12 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
         flexWrap:"wrap",
         "& > button":{
           margin:".3em .5em"
+        },
+        [theme.breakpoints.up("sm")]:{
+          display:"none"
+        },
+        [theme.breakpoints.up("md")]:{
+          display:"flex"
         }
       },
       "& > *:last-child":{
@@ -400,7 +420,6 @@ const useStyles = makeStyles((theme:Theme) => createStyles({
   }
 }))
 
-
 const Index = () => {
   const classes = useStyles()
   const [isOpen,setIsOpen] = React.useState(false)
@@ -410,23 +429,22 @@ const Index = () => {
   }
 
   return(
+    <>
+    <Dialog open={isOpen} handleToggle={handleToggle} />
     <Box className={classes.root}>
       <Navbar handleToggle={handleToggle}/>
-      <Box className={classes.mainView}>
+      <Box data-aos="fade" className={classes.mainView}>
         <Box/>
         <Box>
-          <Typography variant="h5">
+          <Typography data-aos="fade-right" variant="h5">
             Welcome to Sasselbakery
           </Typography>
-          <Typography>
+          <Typography data-aos="fade-right" data-aos-delay="400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus consequatur
             sequi temporibus quae fugit aspernatur, eligendi asperiores atque voluptatibus
             quo iure molestias fuga assumenda repellendus illo porro labore quis?
-            {/* Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
-            voluptatum iste voluptatibus at ratione possimus qui, vero dignissimos dicta
-            asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, */}
           </Typography>
-          <Button onClick={handleToggle} style={{
+          <Button data-aos="fade-right" data-aos-delay="1000" onClick={handleToggle} style={{
             backgroundColor:pink[100],
             borderRadius:"5em",
             fontSize:"1em",
@@ -437,18 +455,14 @@ const Index = () => {
       </Box>
       <Box className={classes.anotherMainView}/>
       <Box className={classes.intro} >
-        <Typography variant="h5">
+        <Typography data-aos="fade-down" data-aos-delay="500" variant="h5">
           A package selected for you
         </Typography>
-        <Typography component="span" variant="subtitle2">
+        <Typography component="span" data-aos="fade-up" data-aos-delay="1000" variant="subtitle2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus consequatur sequi
           temporibus quae fugit aspernatur, eligendi asperiores atque voluptatibus quo iure molestias
           fuga assumenda repellendus illo porro labore quis? Accusantium provident sit rem quibusdam
           nobis autem, eligendi odit deleniti voluptatum iste voluptatibus at ratione possimus qui, vero
-          {/* dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
-          tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
-          labore commodi incidunt cupiditate numquam magnam at aspernatur quae, dolore neque ipsum laborum
-          aperiam harum perspiciatis sunt provident omnis odio dolorem dignissimos quia id? Nemo sit sequi */}
           asperiores.
         </Typography>
         <Button style={{
@@ -459,73 +473,74 @@ const Index = () => {
         </Button>
       </Box>
       <section className={classes.mediaSection}>
-        <Box className={classes.mediaContainer}>
+        <Box data-aos="fade-right" className={classes.mediaContainer}>
           <Box>
-            <Typography variant="h4">
+            <Typography data-aos="fade-right" variant="h4">
               Quality
             </Typography>
-            <Typography>
+            <Typography data-aos="fade-right" data-aos-delay="500">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button  style={{
+            <Button data-aos="fade-left" data-aos-delay="1000" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${MainBg})`}} />
+          <Box style={{backgroundImage:`url(${emojiCake})`}} />
         </Box>
-        <Box className={classes.mediaContainer}>
+        <Box data-aos="fade-left" className={classes.mediaContainer}>
           <Box>
-            <Typography variant="h4">
+            <Typography data-aos="fade-right" data-aos-delay="500" variant="h4">
               Quality
             </Typography>
-            <Typography>
+            <Typography data-aos="fade-left" data-aos-delay="1000">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button  style={{
+            <Button data-aos="fade-up" data-aos-delay="1500" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${MainBg2})`}} />
+          <Box style={{backgroundImage:`url(${chocoCake})`}} />
         </Box>
-        <Box className={classes.mediaContainer}>
+        <Box data-aos="fade-right" className={classes.mediaContainer}>
           <Box>
-            <Typography variant="h4">
+            <Typography data-aos="fade-right" data-aos-delay="500" variant="h4">
               Quality
             </Typography>
-            <Typography>
+            <Typography data-aos="fade-left" data-aos-delay="1000">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button  style={{
+            <Button data-aos="fade-up" data-aos-delay="1500" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${MainBg})`}} />
+          <Box style={{backgroundImage:`url(${chocolateCake})`}} />
         </Box>
       </section>
       <section>
         <Box className={classes.starProduct}>
-          <Box style={{
-            backgroundImage:`url(${MainBg})`
+          <Box data-aos="fade-right" style={{
+            backgroundImage:`url(${strawberry})`,
+            borderRadius:".5em"
           }} />
           <Box className={classes.product}>
-              <Typography component="h5">
+              <Typography data-aos="zoom-right" data-aos-delay="500" component="h5">
                 Our star <span>product</span>
               </Typography>
-            <Box className={classes.imageLabel}>
+            <Box data-aos="fade-left" data-aos-delay="1000" className={classes.imageLabel}>
               <Box style={{
-                backgroundImage:`url(${MainBg2})`
+                backgroundImage:`url(${chocobar})`
               }} />
               <Box>
                 <Typography>
@@ -577,20 +592,44 @@ const Index = () => {
         </Box>
       </section>
       <section className={classes.recipeContainer}>
-        <Typography component="h5">
-          Our other <span>recipes</span>
+        <Typography data-aos="zoom-in-down" component="h5">
+          Our other <span data-aos="fade" data-aos-delay="1000">recipes</span>
         </Typography>
         <Box className={classes.recipeBoxContainer}> 
-          <Box className={classes.recipeBox}>
+          <Box data-aos="fade-right" data-aos-delay="300" className={classes.recipeBox}>
             <Box style={{
-              backgroundImage:`url(${MainBg2})`
+              backgroundImage:`url(${cupcake})`
             }} />
             <Box>
-              <Typography variant="h6">
-                  Curry Dragon Bowl
+            <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
+                    Chocolate Surprise
               </Typography>
-              <Typography variant="caption" >
-                Caption
+              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+                Velvet Flavor
+              </Typography>
+              <Typography data-aos="fade-right" data-aos-delay="1500" variant="body2">
+                Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
+                voluptatum iste voluptatibus at ratione possimus qui, vero dignissimos dicta
+                asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis.
+              </Typography>
+              <Typography data-aos="fade-right" data-aos-delay="2000">
+                <Link href="/">
+                  Show Recipe
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+          <Box data-aos="fade-right" data-aos-delay="600" className={classes.recipeBox}>
+          
+            <Box style={{
+              backgroundImage:`url(${strawberry})`
+            }} />
+            <Box>
+            <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
+                    Chocolate Surprise
+              </Typography>
+              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+                Strawberry happines
               </Typography>
               <Typography variant="body2">
                 Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
@@ -604,16 +643,17 @@ const Index = () => {
               </Typography>
             </Box>
           </Box>
-          <Box className={classes.recipeBox}>
+          <Box data-aos="fade-right" data-aos-delay="900" className={classes.recipeBox}>
+          
             <Box style={{
-              backgroundImage:`url(${MainBg2})`
+              backgroundImage:`url(${emojiCake})`
             }} />
             <Box>
-              <Typography variant="h6">
-                  Curry Dragon Bowl
+            <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
+                    Chocolate Surprise
               </Typography>
-              <Typography variant="caption" >
-                Caption
+              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+                Black-and-white-in-two
               </Typography>
               <Typography variant="body2">
                 Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
@@ -627,39 +667,17 @@ const Index = () => {
               </Typography>
             </Box>
           </Box>
-          <Box className={classes.recipeBox}>
-            <Box style={{
-              backgroundImage:`url(${MainBg2})`
-            }} />
-            <Box>
-              <Typography variant="h6">
-                  Curry Dragon Bowl
-              </Typography>
-              <Typography variant="caption" >
-                Caption
-              </Typography>
-              <Typography variant="body2">
-                Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
-                voluptatum iste voluptatibus at ratione possimus qui, vero dignissimos dicta
-                asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis.
-              </Typography>
-              <Typography>
-                <Link href="/">
-                  Show Recipe
-                </Link>
-              </Typography>
-            </Box>
-          </Box>
-          <Box className={classes.recipeBox}>
+          <Box data-aos="fade-right" data-aos-delay="1200" className={classes.recipeBox}>
+          
           <Box style={{
-            backgroundImage:`url(${MainBg2})`
+            backgroundImage:`url(${chocoCake})`
           }} />
           <Box>
-            <Typography variant="h6">
-                Curry Dragon Bowl
+            <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
+                    Chocolate Surprise
             </Typography>
-            <Typography variant="caption" >
-              Caption
+            <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+              Green Mushy
             </Typography>
             <Typography variant="body2">
               Accusantium provident sit rem quibusdam nobis autem, eligendi odit deleniti
@@ -691,6 +709,7 @@ const Index = () => {
         </Typography>
       </section>
     </Box>
+    </>
   )
 }
 

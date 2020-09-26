@@ -4,6 +4,9 @@ import {AppProps} from "next/app"
 import {ThemeProvider} from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import theme from "../utils/theme"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 export default function MyApp(props:AppProps){
     const {Component,pageProps} = props
@@ -14,6 +17,10 @@ export default function MyApp(props:AppProps){
         if(jssStyles){
             jssStyles.parentElement!.removeChild(jssStyles)
         }
+        AOS.init({
+            easing:"ease-in",
+            duration:1200
+          })        
     },[])
 
     return(
