@@ -64,17 +64,19 @@ const useStyles = makeStyles((theme:Theme) => (
         "& svg":{
           transform:"rotate(90deg)"
         }
-      },
-      "& > div:nth-child(2)":{
+      }
+    },
+    pastriesContainer:{
         display:"flex",
         justifyContent:"space-around",
         alignItems:"center",
         width:"100%",
         flexWrap:"no-wrap",
         backgroundColor:pink[100],
-        borderRadius:".5em"
-      },
+        borderRadius:".5em",
       "& button":{
+        height:"3.5em",
+        width:"3.5em",
         "& > span":{
           height:"100%"
         },
@@ -87,9 +89,7 @@ const useStyles = makeStyles((theme:Theme) => (
           width:"100%",
           height:"100%"
         },
-        height:"3.5em",
-        width:"3.5em",
-        [theme.breakpoints.up("sm")]:{
+      [theme.breakpoints.up("sm")]:{
           height:"5em",
           width:"5em",
         }
@@ -193,7 +193,7 @@ const AlertDialogSlide:React.FC<IProps> = ({open,handleToggle}) =>  {
               </Typography>
               <MoreIcon/>
             </Box>
-            <Box>
+            <Box className={classes.pastriesContainer}>
               <IconButton onClick={handleSelection}>
                 <Box style={{
                   backgroundImage:`url(${chocoCake})`
@@ -219,7 +219,8 @@ const AlertDialogSlide:React.FC<IProps> = ({open,handleToggle}) =>  {
                   <MoreIcon/>
                   <Box>
                     <Box style={{
-                      backgroundImage:`urL(${sprinkle})`
+                      backgroundImage:`urL(${sprinkle})`,
+                      backgroundRepeat:"no-repeat"
                     }} />
                     <Typography>
                       Sprinkles
@@ -233,7 +234,8 @@ const AlertDialogSlide:React.FC<IProps> = ({open,handleToggle}) =>  {
                   <MoreIcon/>
                   <Box>
                     <Box style={{
-                      backgroundImage:`url(${strawberry})`
+                      backgroundImage:`url(${strawberry})`,
+                      backgroundRepeat:"no-repeat"
                     }} />
                     <Typography>
                       Strawberry
@@ -247,7 +249,8 @@ const AlertDialogSlide:React.FC<IProps> = ({open,handleToggle}) =>  {
                   <MoreIcon/>
                   <Box>
                     <Box style={{
-                      backgroundImage:`url(${chocobar})`
+                      backgroundImage:`url(${chocobar})`,
+                      backgroundRepeat:"no-repeat"
                     }} />
                     <Typography>
                       Chocolate
@@ -261,7 +264,8 @@ const AlertDialogSlide:React.FC<IProps> = ({open,handleToggle}) =>  {
                   <MoreIcon/>
                   <Box>
                     <Box style={{
-                      backgroundImage:`url(${cupcake})`
+                      backgroundImage:`url(${cupcake})`,
+                      backgroundRepeat:"no-repeat"
                     }} />
                     <Typography>
                       Sprinkles

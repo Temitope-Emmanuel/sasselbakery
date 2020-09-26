@@ -489,7 +489,9 @@ const Index = () => {
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${emojiCake})`}} />
+          <Box style={{
+            backgroundImage:`url(${emojiCake})`,
+            backgroundRepeat:"no-repeat"}} />
         </Box>
         <Box data-aos="fade-left" className={classes.mediaContainer}>
           <Box>
@@ -507,7 +509,10 @@ const Index = () => {
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${chocoCake})`}} />
+          <Box style={{
+            backgroundImage:`url(${chocoCake})`,
+            backgroundRepeat:"no-repeat"
+          }} />
         </Box>
         <Box data-aos="fade-right" className={classes.mediaContainer}>
           <Box>
@@ -525,7 +530,10 @@ const Index = () => {
               Learn More
             </Button>
           </Box>
-          <Box style={{backgroundImage:`url(${chocolateCake})`}} />
+          <Box style={{
+            backgroundImage:`url(${chocolateCake})`,
+            backgroundRepeat:"no-repeat"
+            }} />
         </Box>
       </section>
       <section>
