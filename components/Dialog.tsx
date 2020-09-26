@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme:Theme) => (
         justifyContent:"space-around",
         alignItems:"center",
         width:"100%",
-        flexWrap:"no-wrap",
+        flexWrap:"wrap",
         backgroundColor:pink[100],
         borderRadius:".5em",
       "& button":{

@@ -455,10 +455,10 @@ const Index = () => {
       </Box>
       <Box className={classes.anotherMainView}/>
       <Box className={classes.intro} >
-        <Typography data-aos="fade-down" data-aos-delay="500" variant="h5">
+        <Typography data-aos="fade-down" data-aos-delay="200" variant="h5">
           A package selected for you
         </Typography>
-        <Typography component="span" data-aos="fade-up" data-aos-delay="1000" variant="subtitle2">
+        <Typography component="span" data-aos="fade-up" data-aos-delay="500" variant="subtitle2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus consequatur sequi
           temporibus quae fugit aspernatur, eligendi asperiores atque voluptatibus quo iure molestias
           fuga assumenda repellendus illo porro labore quis? Accusantium provident sit rem quibusdam
@@ -478,11 +478,11 @@ const Index = () => {
             <Typography data-aos="fade-right" variant="h4">
               Quality
             </Typography>
-            <Typography data-aos="fade-right" data-aos-delay="500">
+            <Typography data-aos="fade-right" data-aos-delay="200">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button data-aos="fade-left" data-aos-delay="1000" style={{
+            <Button data-aos="fade-left" data-aos-delay="500" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
@@ -495,14 +495,14 @@ const Index = () => {
         </Box>
         <Box data-aos="fade-left" className={classes.mediaContainer}>
           <Box>
-            <Typography data-aos="fade-right" data-aos-delay="500" variant="h4">
+            <Typography data-aos="fade-right" data-aos-delay="200" variant="h4">
               Quality
             </Typography>
-            <Typography data-aos="fade-left" data-aos-delay="1000">
+            <Typography data-aos="fade-left" data-aos-delay="500">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button data-aos="fade-up" data-aos-delay="1500" style={{
+            <Button data-aos="fade-up" data-aos-delay="700" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
@@ -516,14 +516,14 @@ const Index = () => {
         </Box>
         <Box data-aos="fade-right" className={classes.mediaContainer}>
           <Box>
-            <Typography data-aos="fade-right" data-aos-delay="500" variant="h4">
+            <Typography data-aos="fade-right" data-aos-delay="200" variant="h4">
               Quality
             </Typography>
-            <Typography data-aos="fade-left" data-aos-delay="1000">
+            <Typography data-aos="fade-left" data-aos-delay="5000">
               dignissimos dicta asperiores totam hic illo. Hic quisquam error itaque officiis blanditiis, ipsam
               tenetur doloribus obcaecati suscipit corporis ipsum aspernatur? Ad nulla illo beatae veritatis
             </Typography>
-            <Button data-aos="fade-up" data-aos-delay="1500" style={{
+            <Button data-aos="fade-up" data-aos-delay="700" style={{
               backgroundColor:pink["A700"],
               color:"rgba(255,255,255,.8)"
             }} >
@@ -543,10 +543,10 @@ const Index = () => {
             borderRadius:".5em"
           }} />
           <Box className={classes.product}>
-              <Typography data-aos="zoom-right" data-aos-delay="500" component="h5">
+              <Typography data-aos="zoom-right" data-aos-delay="200" component="h5">
                 Our star <span>product</span>
               </Typography>
-            <Box data-aos="fade-left" data-aos-delay="1000" className={classes.imageLabel}>
+            <Box data-aos="fade-left" data-aos-delay="500" className={classes.imageLabel}>
               <Box style={{
                 backgroundImage:`url(${chocobar})`
               }} />
@@ -601,7 +601,7 @@ const Index = () => {
       </section>
       <section className={classes.recipeContainer}>
         <Typography data-aos="zoom-in-down" component="h5">
-          Our other <span data-aos="fade" data-aos-delay="1000">recipes</span>
+          Our other <span data-aos="fade" data-aos-delay="500">recipes</span>
         </Typography>
         <Box className={classes.recipeBoxContainer}> 
           <Box data-aos="fade-right" data-aos-delay="300" className={classes.recipeBox}>
@@ -612,7 +612,7 @@ const Index = () => {
             <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
                     Chocolate Surprise
               </Typography>
-              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+              <Typography data-aos="fade-right" data-aos-delay="700" variant="caption" >
                 Velvet Flavor
               </Typography>
               <Typography data-aos="fade-right" data-aos-delay="1500" variant="body2">
@@ -636,7 +636,7 @@ const Index = () => {
             <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
                     Chocolate Surprise
               </Typography>
-              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+              <Typography data-aos="fade-right" data-aos-delay="700" variant="caption" >
                 Strawberry happines
               </Typography>
               <Typography variant="body2">
@@ -660,7 +660,7 @@ const Index = () => {
             <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
                     Chocolate Surprise
               </Typography>
-              <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+              <Typography data-aos="fade-right" data-aos-delay="700" variant="caption" >
                 Black-and-white-in-two
               </Typography>
               <Typography variant="body2">
@@ -675,7 +675,7 @@ const Index = () => {
               </Typography>
             </Box>
           </Box>
-          <Box data-aos="fade-right" data-aos-delay="1200" className={classes.recipeBox}>
+          <Box data-aos="fade-right" data-aos-delay="900" className={classes.recipeBox}>
           
           <Box style={{
             backgroundImage:`url(${chocoCake})`
@@ -684,7 +684,7 @@ const Index = () => {
             <Typography data-aos="fade-down" data-aos-delay="500" variant="h6">
                     Chocolate Surprise
             </Typography>
-            <Typography data-aos="fade-right" data-aos-delay="1000" variant="caption" >
+            <Typography data-aos="fade-right" data-aos-delay="700" variant="caption" >
               Green Mushy
             </Typography>
             <Typography variant="body2">
